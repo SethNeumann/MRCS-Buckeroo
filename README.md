@@ -1,33 +1,14 @@
-# REPO NAME: EagleTemplate-new
-## License: CERN Open Hardware Licence v1.2
+MRCS-Buckeroo
+
 ## License: Creative Commons Attribution-NonCommercial-ShareAlike
 
-Delete one of the license lines above, and replace this line and following with the contents of the doc.md file
+MRCS-Buckeroo
 
-### How to use this template:
+Model Railroad projects often require one or more power supplies for lighting and electronics powered from an 
+auxilliary powr bus, usually 12VDC or a local "wall wart" power supply.  Commercial bucking supplies based on
+LM 2596 or boosters based on XL6009 offere an inexpensive basis for developing any voltage from 3-35 volts with 
+an input of 3-25 volts by choosing and adjusting an appropriate module.  
 
-  1. Create a repo using this template, 
-  2. Use eagle to create your project
-  3. Edit the other text files to describe your project
-  4. git add .
-  5. git commit -m "add to git"
-  6. git tag -a 1.0 -m 1.0
-  7. git push origin 1.0
-  
-
-This is a template for new eagle designs.
-It includes a blank schematic with a title block ready for editing and a
-default PCB that uses the SPCoast.lbr's BOARD component, Fiducials and an OSHW logo.
-
-First line: A short description of the project, used as a subtitle or tagline
-
-Remaining lines: a verbose changelog of what makes this "git version" different from the last.
-Use this space (in Markdown format) to describe the context and details of the changes.
-This section should be 5 to 20 lines of interesting detail; each version tab in the project will 
-display this text to help the reader understand why this version is differnet...
-
-The published project on the SPCoast.github.io website will
-include the relevant git commit messages as a terse, high level
-changelog, so don't replicate those messages here.
-
-
+The Buckeroo has a 2.1 x 5.5 mm barrel connector and a 3.5mm screw terminal for input and 12 x 0.100 terminals 
+power and ground out.  You may also use it as a power distribution block for layout bus power or a wall wart 
+without further conversion by omitting the converter and jumpering around its pads.
