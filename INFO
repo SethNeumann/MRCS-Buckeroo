@@ -1,7 +1,7 @@
 title: MRCS-Buckeroo
 designer: Seth Neumann
-fabricated: Pick one of   no
-fab_date: YYYY-MM
-status: Pick one of   experimental
-publish: Pick one of  yes
+fabricated: yes
+fab_date: 2019-11
+status: released
+publish: yes
 tags: [MRCS, eagle]
