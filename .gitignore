@@ -23,3 +23,6 @@ Buckeroo -a BOM.xlsx
 eagle.epf
 eagle.epf
 eagle.epf
+*.s#1
+*.b##
+*.s##
