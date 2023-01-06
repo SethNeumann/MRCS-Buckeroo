@@ -2407,20 +2407,33 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </deviceset>
 </devicesets>
 </library>
-<library name="MH-MINI-360">
+<library name="MRCS">
 <packages>
 <package name="MH-MINI-360">
 <description>MH-Mini-360</description>
-<pad name="IN-" x="-7.62" y="5.08" drill="0.9"/>
+<pad name="IN-" x="-7.62" y="4.826" drill="0.9"/>
 <pad name="INN+" x="-7.62" y="-4.445" drill="0.9"/>
 <pad name="OUTT+" x="7.62" y="-4.445" drill="0.9"/>
-<pad name="OUT-" x="7.62" y="5.08" drill="0.9"/>
+<pad name="OUT-" x="7.62" y="4.826" drill="0.9"/>
 <wire x1="-8.89" y1="-5.715" x2="-8.89" y2="6.35" width="0.000128125" layer="21"/>
 <wire x1="-8.89" y1="6.35" x2="8.89" y2="6.35" width="0.000128125" layer="21"/>
 <wire x1="8.89" y1="6.35" x2="8.89" y2="-5.715" width="0.000128125" layer="21"/>
 <wire x1="8.89" y1="-5.715" x2="-8.89" y2="-5.715" width="0.000128125" layer="21"/>
 <text x="-8.89" y="6.985" size="1.778" layer="25" font="vector">&gt;Name</text>
 <text x="-8.89" y="-7.62" size="1.778" layer="27" font="vector">Value</text>
+</package>
+<package name="XL6009_BOARD">
+<description>XL6009 based buck boost converter board</description>
+<wire x1="-24.13" y1="-12.446" x2="24.13" y2="-12.446" width="0.000128125" layer="21"/>
+<wire x1="24.13" y1="-12.446" x2="24.13" y2="12.446" width="0.000128125" layer="21"/>
+<wire x1="-24.13" y1="12.446" x2="-24.13" y2="-12.446" width="0.000128125" layer="21"/>
+<wire x1="-24.13" y1="12.446" x2="24.13" y2="12.446" width="0.000128125" layer="21"/>
+<pad name="IN-" x="-22.606" y="-10.4648" drill="0.9" shape="square"/>
+<pad name="IN+" x="-22.606" y="10.4648" drill="0.9" shape="square"/>
+<pad name="OUT+" x="22.606" y="10.4648" drill="0.9" shape="square"/>
+<pad name="OUT-" x="22.606" y="-10.4648" drill="0.9" shape="square"/>
+<text x="-23.876" y="13.462" size="1.778" layer="25">&gt;Name</text>
+<text x="-23.622" y="-14.478" size="1.778" layer="27">&gt;Value</text>
 </package>
 </packages>
 <symbols>
@@ -2434,6 +2447,17 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pin name="OUT-" x="17.78" y="5.08" length="middle" rot="R180"/>
 <pin name="INN+" x="-20.32" y="-5.08" visible="off" length="middle"/>
 <pin name="OUTT+" x="17.78" y="-5.08" visible="off" length="middle" rot="R180"/>
+</symbol>
+<symbol name="XL6009">
+<description>XL6009 buck/boost converter module</description>
+<wire x1="-33.02" y1="-12.7" x2="40.64" y2="-12.7" width="0.000128125" layer="94"/>
+<wire x1="40.64" y1="-12.7" x2="40.64" y2="25.4" width="0.000128125" layer="94"/>
+<wire x1="40.64" y1="25.4" x2="-33.02" y2="25.4" width="0.000128125" layer="94"/>
+<wire x1="-33.02" y1="25.4" x2="-33.02" y2="-12.7" width="0.000128125" layer="94"/>
+<pin name="IN+" x="-35.56" y="20.32" visible="pin" length="middle"/>
+<pin name="IN-" x="-35.56" y="-7.62" visible="pin" length="middle"/>
+<pin name="OUT+" x="44.45" y="21.59" visible="pin" length="middle" rot="R180"/>
+<pin name="OUT-" x="44.45" y="-7.62" visible="pin" length="middle" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -2449,6 +2473,24 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <connect gate="G$1" pin="INN+" pad="INN+"/>
 <connect gate="G$1" pin="OUT-" pad="OUT-"/>
 <connect gate="G$1" pin="OUTT+" pad="OUTT+"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="XL6009BOARD">
+<gates>
+<gate name="G$1" symbol="XL6009" x="-5.08" y="-7.62"/>
+</gates>
+<devices>
+<device name="" package="XL6009_BOARD">
+<connects>
+<connect gate="G$1" pin="IN+" pad="IN+"/>
+<connect gate="G$1" pin="IN-" pad="IN-"/>
+<connect gate="G$1" pin="OUT+" pad="OUT+"/>
+<connect gate="G$1" pin="OUT-" pad="OUT-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -2486,11 +2528,12 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="CON3" library="SPCoast" deviceset="CONNECTOR-M02" device="MOLEX-1X02-LOCK" value="output bypass"/>
 <part name="CON4" library="SPCoast" deviceset="CONNECTOR-M02" device="MOLEX-1X02-LOCK" value="GND BYPASS"/>
 <part name="FRAME1" library="frames" deviceset="FRAME_A_L" device=""/>
-<part name="MH-MINI-360" library="MH-MINI-360" deviceset="MH-MINI-360" device=""/>
+<part name="MH-MINI-360" library="MRCS" deviceset="MH-MINI-360" device=""/>
 <part name="C1" library="SPCoast" deviceset="CAP-POL*" device="PTH-5MM" value="150uF@50"/>
 <part name="C2" library="SPCoast" deviceset="CAP*" device="PTH2" value="1.0uF@50"/>
 <part name="C3" library="SPCoast" deviceset="CAP*" device="PTH2" value="10uF@50"/>
 <part name="VR1" library="SPCoast" deviceset="VREG-?-*" device="PTH-RA" value="780X"/>
+<part name="U$5" library="MRCS" deviceset="XL6009BOARD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2502,7 +2545,7 @@ GND
 <text x="210.82" y="-40.64" size="3.81" layer="97">Seth Neumann</text>
 <text x="152.4" y="-12.7" size="3.81" layer="97" font="vector">Seth Neumann</text>
 <text x="147.32" y="129.54" size="1.778" layer="91">MH-MINI-360</text>
-<text x="198.12" y="-22.86" size="2.54" layer="91">1.3</text>
+<text x="198.12" y="-22.86" size="2.54" layer="91">1.4</text>
 </plain>
 <instances>
 <instance part="OUTPUT+" gate="G$1" x="119.38" y="96.52" smashed="yes" rot="MR180">
@@ -2525,6 +2568,7 @@ GND
 <instance part="C2" gate="C1" x="66.04" y="76.2"/>
 <instance part="C3" gate="C1" x="86.36" y="76.2"/>
 <instance part="VR1" gate="VR" x="76.2" y="83.82"/>
+<instance part="U$5" gate="G$1" x="142.24" y="151.13"/>
 </instances>
 <busses>
 </busses>
@@ -2586,6 +2630,11 @@ GND
 <wire x1="76.2" y1="76.2" x2="76.2" y2="60.96" width="0.6096" layer="91"/>
 <wire x1="76.2" y1="60.96" x2="86.36" y2="60.96" width="0.6096" layer="91"/>
 <junction x="86.36" y="60.96"/>
+<wire x1="180.34" y1="132.08" x2="190.5" y2="132.08" width="0.6096" layer="91"/>
+<wire x1="190.5" y1="132.08" x2="190.5" y2="143.51" width="0.6096" layer="91"/>
+<wire x1="190.5" y1="143.51" x2="186.69" y2="143.51" width="0.6096" layer="91"/>
+<junction x="180.34" y="132.08"/>
+<pinref part="U$5" gate="G$1" pin="OUT-"/>
 </segment>
 </net>
 <net name="OUTPUT+" class="1">
@@ -2644,6 +2693,12 @@ GND
 <wire x1="83.82" y1="83.82" x2="86.36" y2="83.82" width="0.6096" layer="91"/>
 <junction x="83.82" y="83.82"/>
 <junction x="86.36" y="83.82"/>
+<wire x1="86.36" y1="121.92" x2="86.36" y2="180.34" width="0.6096" layer="91"/>
+<wire x1="86.36" y1="180.34" x2="187.96" y2="180.34" width="0.6096" layer="91"/>
+<wire x1="187.96" y1="180.34" x2="187.96" y2="172.72" width="0.6096" layer="91"/>
+<wire x1="187.96" y1="172.72" x2="186.69" y2="172.72" width="0.6096" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="OUT+"/>
+<junction x="86.36" y="121.92"/>
 </segment>
 </net>
 <net name="INPUT+" class="0">
@@ -2678,6 +2733,10 @@ GND
 <pinref part="VR1" gate="VR" pin="IN"/>
 <wire x1="66.04" y1="83.82" x2="68.58" y2="83.82" width="0.6096" layer="91"/>
 <junction x="66.04" y="83.82"/>
+<wire x1="45.72" y1="83.82" x2="45.72" y2="171.45" width="0.6096" layer="91"/>
+<wire x1="45.72" y1="171.45" x2="106.68" y2="171.45" width="0.6096" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="IN+"/>
+<junction x="45.72" y="83.82"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -2714,6 +2773,10 @@ GND
 <wire x1="66.04" y1="71.12" x2="66.04" y2="66.04" width="0.6096" layer="91"/>
 <wire x1="66.04" y1="66.04" x2="50.8" y2="66.04" width="0.6096" layer="91"/>
 <junction x="50.8" y="66.04"/>
+<wire x1="99.06" y1="132.08" x2="99.06" y2="143.51" width="0.6096" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="IN-"/>
+<wire x1="99.06" y1="143.51" x2="106.68" y2="143.51" width="0.6096" layer="91"/>
+<junction x="99.06" y="132.08"/>
 </segment>
 </net>
 </nets>
