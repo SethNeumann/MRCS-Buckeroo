@@ -9,5 +9,5 @@ The Buckeroo has a 2.1 x 5.5 mm barrel connector and a 3.5mm screw terminal for 
 power and ground out.  You may also use it as a power distribution block for layout bus power or a wall wart 
 without further conversion by omitting the converter and jumpering around its pads.
 
-Version 1.5 is culmination of a couple of changes including buck/boost converters, a smaller MH-MINI bucker, pads
-for 78XX linear regulators in TO-220 form factor and a choice of capacitor pads to handle different packages.
+Version 1.6 is culmination of a couple of changes including buck/boost converters, a smaller MH-MINI bucker, pads
+for 78XX linear regulators in TO-220 form factor and a choice of capacitor pads to handle different packages. V1.6 is panelized
